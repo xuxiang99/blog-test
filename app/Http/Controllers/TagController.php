@@ -29,14 +29,20 @@ class TagController extends Controller
     	]);
     	$post_ids = request('post_ids');
     	$tag_id = $tag->id;
-    	$data = array();
+    	$data = $data2 = array();
     	foreach ($post_ids as $k => $v) {
 			$data[$k]['article_id'] = $v;
 			$data[$k]['tag_id']     = $tag_id;
 			$data[$k]['created_at'] = date('Y-m-d H:i:s');
 			$data[$k]['updated_at'] = date('Y-m-d H:i:s');
+
+            $data[$k]['article_id'] = $v;
+            $data[$k]['tag_id']     = $tag_id;
+            $data[$k]['created_at'] = date('Y-m-d H:i:s');
+            $data[$k]['updated_at'] = date('Y-m-d H:i:s');
     	}
     	ArticleTag::insert($data);
+        Article::where('user_id', \Auth::id())->whereIn('id',$post_ids)->update(['tag_id' => $tag_id]);
     	return back();
     }
 }

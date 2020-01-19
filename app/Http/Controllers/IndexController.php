@@ -24,9 +24,6 @@ class IndexController extends Controller
     	} else {
     		$articles = $article->getArticles();
     	}
-    	// \Redis::Set('s',222);
-    	cache(['key' => 111], 10);
-    	// dd(cache('key'));
     	return view('index.index', compact('articles'));
     }
 }

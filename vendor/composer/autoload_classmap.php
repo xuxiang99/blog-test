@@ -43,6 +43,7 @@ return array(
     'App\\User' => $baseDir . '/app/User.php',
     'App\\Zan' => $baseDir . '/app/Zan.php',
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
+    'ArticleTableSeeder' => $baseDir . '/database/seeds/ArticleTableSeeder.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
     'Carbon\\CarbonInterval' => $vendorDir . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
